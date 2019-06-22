@@ -10,6 +10,14 @@
     <link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="css\mian.css">
 </head>
+<style type="text/css">
+    .icon {
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+    }
+</style>
 <body>
     <!-- 先是顶部的导航 -->
     <div id="top_nav">
@@ -20,7 +28,9 @@
                 </a>
             </div>
             <div class="left">
-
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-quanqiu"></use>
+                    </svg>
             </div>
         </div>
     </div>
@@ -44,5 +54,6 @@
     <!-- 下载的js文件要放在自己写的文件上面 -->
 <script src="node_modules\jquery\dist\jquery.js"></script>
 <script src="js\main.js"></script>
+<script src="https://at.alicdn.com/t/font_1253647_t54l1868rd.js"></script>
 </body>
 </html>
