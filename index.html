@@ -22,23 +22,24 @@
     <!-- 先是顶部的导航 -->
     <div id="top_nav">
         <div class="head_inner">
-            <div class="right">
+            <div class="left">
                 <a href="https://cloud.tencent.com/" class="logo">
                 <img src="img\main-log.svg" alt="加载失败666">
                 </a>
             </div>
-            <div class="left">
+            <div class="right">
                 <span class="dropdown">
-                    <svg class="icon" aria-hidden="true">
+                    <svg class="icon" aria-hidden="true" id="icon1">
                         <use xlink:href="#icon-quanqiu"></use>
                     </svg>
                     中国站
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-jiantou"></use>
+                    <svg class="icon" aria-hidden="true" id="icon2">
+                        <use xlink:href="#icon-jiantou-copy"></use>
                     </svg>
                 </span>
                 <ul class="dropdown-list">
                     <li>
+                        <!-- a为行内元素 -->
                         <a href="#">
                         中国站
                         </a>
@@ -72,6 +73,6 @@
     <!-- 下载的js文件要放在自己写的文件上面 -->
 <script src="node_modules\jquery\dist\jquery.js"></script>
 <script src="js\main.js"></script>
-<script src="https://at.alicdn.com/t/font_1253647_t54l1868rd.js"></script>
+<script src="https://at.alicdn.com/t/font_1253647_fmfx0epxqed.js"></script>
 </body>
 </html>
