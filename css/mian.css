@@ -31,6 +31,12 @@
 .right:hover ul{
     display: block;
 }
+.right #icon2{
+    transition: all .3s;
+}
+.right:hover #icon2{
+    transform: rotate(180deg);
+}
 
 .dropdown{
     display: block;
