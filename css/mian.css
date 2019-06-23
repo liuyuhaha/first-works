@@ -61,17 +61,18 @@
     background-color:inherit;
 }
 
-.dropdown-list li{
+.drop-list{
     list-style:none;
 }
 
-.dropdown-list li a{
+.drop-list a{
     display: block;
     text-decoration: none;
     color: #dddddd;
     padding: 0 10px;
 }
+
 /* addclass为变颜色 */
-.colorchange{
-    color: #00a4ff!important;
+.drop-list:hover a{
+    color: #00a4ff;
 }
