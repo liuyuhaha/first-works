@@ -89,7 +89,7 @@
                 <form action="http://localhost:8000/index.html" class="login" method="GET">
                 <ul class="for-list">
                     <li class="list-item">
-                        <input type="text" class="input-control">
+                        <input data-rule="minlength:6|maxlength:10|required:false|numric:true" type="text" class="input-control">
                         <div class="input-error">请输入主账号ID</div>
                     </li>
                     <li class="list-item"></li>
@@ -110,6 +110,7 @@
     </div>
     <!-- 下载的js文件要放在自己写的文件上面 -->
 <script src="node_modules\jquery\dist\jquery.js"></script>
+<script src="js\validator.js"></script>
 <script src="js\main.js"></script>
 <script src="https://at.alicdn.com/t/font_1253647_fmfx0epxqed.js"></script>
 </body>

@@ -82,3 +82,8 @@
 .drop-list:hover a{
     color: #00a4ff;
 }
+
+/* 表单 */
+.input-error{
+    color: red;
+}
