@@ -1,7 +1,30 @@
 $(function(){
-    'use strict'
+    'use strict';
 
     window.Validator=function(val,rule){
+
+        //总方法
+        this.is_valid = function(){
+            var key;
+            //如果不是必填项且用户未填写任何内容则直接判定为合法跳过
+            if(!rule.required && !val)
+            return true;
+            //获得值之后要判断用那种方法来验证
+            //动态部分就是this.validate_的后半部分，用迭代的方式
+            //rule{minlength：6，maxlength：10}，有几个规则就会迭代几次用几次方法
+            for(key in rule){
+                //一开始就已经检测了是否为必填项，就需要防止重复检查
+                if(key==="required")
+                continue;
+
+                //调用rule中相对应的方法
+                var r = this["validate_"+ key]();
+                //但如果迭代一个方法之后返回false就没必要进行下去
+                if(!r) return false;
+            }
+            return true;
+
+        }
         
         this.validate_maxlength=function(){
             pre_length();
