@@ -4,11 +4,11 @@ $(function(){
     window.Validator=function(val,rule){
         
         this.validate_maxlength=function(){
-             val=val.toString();
+            pre_length();
              return val.length<=rule.maxlength;
         }
         this.validate_minlength=function(){
-            val=val.toString();
+            pre_length();
             return val.length>=rule.minlength;       
         }
         this.validate_required=function(){
@@ -19,6 +19,14 @@ $(function(){
         }
         this.validate_numric=function(){
             return $.isNumeric(val);
+        }
+        this.validate_pattern=function(){
+            var reg= new RegExp(rule.pattern);
+            return reg.test(val);
+        }
+// 用于完成this.validate_maxlength与this.validate_minlength前置工作
+        function pre_length(){
+            val=val.toString();
         }
     }
 })
