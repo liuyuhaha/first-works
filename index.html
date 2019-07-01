@@ -1,39 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登录-腾讯云</title>
     <link rel="icon" href="img\favicon.ico">
-    <!-- normalize也一样放在自己的css文件前面 -->
+     <!-- 下载的css文件要放在自己写的文件上面 -->
     <link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="css\mian.css">
-    
 </head>
+<style type="text/css">
+    .icon {
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+    }
+</style>
 <body>
     <!-- 先是顶部的导航 -->
     <div id="top_nav">
         <div class="head_inner">
-            <div class="right-logo">
+            <div class="left">
                 <a href="https://cloud.tencent.com/" class="logo">
-                <img src="img\main.svg" alt="加载失败666">
+                <img src="img\main-log.svg" alt="加载失败666">
                 </a>
             </div>
-            <div class="left">
-                <div class="dropdown">
-                    <a href="" class="dropdown-link">
-                        
-                    </a>
-                </div>
+            <div class="right">
+                <span class="dropdown">
+                    <svg class="icon" aria-hidden="true" id="icon1">
+                        <use xlink:href="#icon-quanqiu"></use>
+                    </svg>
+                    中国站
+                    <svg class="icon" aria-hidden="true" id="icon2">
+                        <use xlink:href="#icon-jiantou-copy"></use>
+                    </svg>
+                </span>
+                <ul class="dropdown-list">
+                    <li class="drop-list"> 
+                        <!-- a为行内元素 -->
+                        <a href="#">
+                        中国站
+                        </a>
+                    </li>
+                    <li class="drop-list">
+                        <a href="https://intl.cloud.tencent.com/login/subAccount">
+                        Internaitonal
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
     <!-- 再是主题内容，左方是表单，右方是文字按钮 -->
     <div class="main">
         <div class="main-inner">
-            <div class="form_left">
-
+            <div class="fo_left">
+                <div class="for-title">
+                    <div class="big-log">
+                        子用户登录
+                    </div>
+                    <div class="attention">
+                        请输入
+                        <span class="txt-hide">
+                            主账号ID
+                            <div class="txt-hide-wrap">
+                                <div class="content">
+                                账号ID（例如：100001234567）
+                                是账号在腾讯云的唯一标识，
+                                请在账号中心-账号信息里查看。
+                                </div>
+                            </div>
+                        </span>
+                        并选择
+                        <span class="txt-hide">
+                            登录方式
+                            <div class="txt-hide-wrap">
+                                <div class="content">
+                                 登录方式分为CAM子用户登录
+                                 和企业微信子用户登录，
+                                 请根据您的子用户类型选择相应的登录方式。                        
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <form action="http://localhost:8000/index.html" class="login" method="GET">
+                <ul class="for-list">
+                    <li class="list-item">
+                        <input data-rule='minlength:6|maxlength:10|' 
+                        type="text"
+                        id="test" 
+                        class="input-control">
+                        <div class="input-error">请输入主账号ID</div>
+                    </li>
+                    <li class="list-item"></li>
+                    <li class="list-item"></li>
+                </ul>
+                </form>
             </div>
             <div class="other_right">
 
@@ -46,8 +111,11 @@
 
         </span>
     </div>
-    <!-- jquery引包要放在自己js文件前面 -->
-    <script src="node_modules\jquery\dist\jquery.js"></script>
-    <script src="js\main.js"></script>
+    <!-- 下载的js文件要放在自己写的文件上面 -->
+<script src="node_modules\jquery\dist\jquery.js"></script>
+<script src="https://at.alicdn.com/t/font_1253647_fmfx0epxqed.js"></script>
+<script src="js\validator.js"></script>
+<script src="js\input.js"></script>
+<script src="js\main.js"></script>
 </body>
 </html>
