@@ -17,7 +17,7 @@ $(function(){
                 if(key==="required")
                 continue;
 
-                //调用rule中相对应的方法
+                //调用rule中相对应的方法并触发它
                 var r = this["validate_"+ key]();
                 //但如果迭代一个方法之后返回false就没必要进行下去
                 if(!r) return false;
@@ -40,7 +40,7 @@ $(function(){
                 return false;
             }return true;
         }
-        this.validate_numric=function(){
+        this.validate_numeric=function(){
             return $.isNumeric(val);
         }
         this.validate_pattern=function(){

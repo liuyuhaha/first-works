@@ -4,19 +4,19 @@ $(function(){
     window.Input=function(selector){
 // 定义某个元素，这一步就是先定义好一个元素等待传值
         var $ele
-        ,rule={};
+        ,me=this
+        ,rule={required:true};
 
         this.load_validator=function(){
-            //Validatoe中要传入val值和rule规则（规则有了parse_rule）
             var val=this.get_val();
             this.validator=new Validator(val,rule);
         }
+            //Validatoe中要传入val值和rule规则（规则有了parse_rule）
 
         //get val的值
         this.get_val=function(){
             return $ele.val();
         }
-
 
 //一开始就选好的方法
         function init(){
@@ -25,11 +25,15 @@ $(function(){
         //找到元素所绑定的验证规则
             parse_rule();
         //检测是否合法，传到validator里面，这次将其暴露出去
-            this.load_validator();
+        //当使用new 关键字时候,this 指向的是当前开辟的这个对象实例，
+        // 因此外部用一个变量引用它，就可以使用这个新对象实例当不使用new
+        // ,this就是指向window 。但是对于dom事件中，需要另外理解了。
+            me.load_validator();
         }
+//封装load_validator
 //确定我是谁的问题，进行封装
         function find_ele(){
-            if(selector instanceof jquery){
+            if(selector instanceof jQuery){
                 $ele=$(selector);
             }else{
                 $ele=$(selector);
