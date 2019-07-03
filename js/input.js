@@ -28,8 +28,20 @@ $(function(){
         //当使用new 关键字时候,this 指向的是当前开辟的这个对象实例，
         // 因此外部用一个变量引用它，就可以使用这个新对象实例当不使用new
         // ,this就是指向window 。但是对于dom事件中，需要另外理解了。
-            me.load_validator();
+            me.load_validator(); 
+        //开始检测用户是否输入，没刷新也可以检测
+            listen();
         }
+
+        function listen(){
+            //change节省资源，keyup，当用户在输入过程就在检测
+            $ele.on('change',function(){
+               var re= me.validator.is_valid(me.get_val());
+               console.log("valid:",re);
+            })
+        }
+
+
 //封装load_validator
 //确定我是谁的问题，进行封装
         function find_ele(){
@@ -59,6 +71,7 @@ $(function(){
                 //rule["min"]="18",打印这个rule就会是{min:18}
                 rule[item_arr[0]]=JSON.parse(item_arr[1]);
                 //不加只要是个值就一定是字符串,加了JSON的语法可以变成int和字符串
+                //JSON.parse内部数据类型错误的话会出现
                 
             }
             

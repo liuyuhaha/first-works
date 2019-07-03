@@ -4,8 +4,9 @@ $(function(){
     window.Validator=function(val,rule){
 
         //总方法
-        this.is_valid = function(){
+        this.is_valid = function(new_val){
             var key;
+            val=new_val || val;
             //如果不是必填项且用户未填写任何内容则直接判定为合法跳过
             if(!rule.required && !val)
             return true;
@@ -18,7 +19,7 @@ $(function(){
                 continue;
 
                 //调用rule中相对应的方法并触发它
-                var r = this["validate_"+ key]();
+                var r = this['validate_' +key]();
                 //但如果迭代一个方法之后返回false就没必要进行下去
                 if(!r) return false;
             }
@@ -40,6 +41,14 @@ $(function(){
                 return false;
             }return true;
         }
+        this.validate_max=function(){
+            pre_max_min();
+            return val <= rule.max;
+        }
+        this.validate_min=function(){
+            pre_max_min();
+            return val>=rule.min;
+        }
         this.validate_numeric=function(){
             return $.isNumeric(val);
         }
@@ -48,8 +57,13 @@ $(function(){
             return reg.test(val);
         }
 // 用于完成this.validate_maxlength与this.validate_minlength前置工作
+        function pre_max_min(){
+            val=parseFloat(val);
+        }
+
         function pre_length(){
             val=val.toString();
         }
+        
     }
 })
