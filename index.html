@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- 指示 web 浏览器关于页面使用哪个 HTML 版本进行编写的指令 -->
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -92,8 +93,9 @@
                         <input data-rule='minlength:2|maxlength:6|max:999999|min:18' 
                         type="text"
                         id="test" 
+                        name="username"
                         class="input-control">
-                        <div class="input-error">请输入主账号ID</div>
+                        <div class="input-error" id="username-input-error">请输入主账号ID</div>
                     </li>
                     <li class="list-item"></li>
                     <li class="list-item"></li>

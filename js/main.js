@@ -12,4 +12,5 @@ $(function(){
      var test=new Input("#test");//先实例化input，input已经在input.js实例化了
      var valid=test.validator.is_valid(); 
      console.log('valid:',valid);
+    //  选中页面中所有的input
 });

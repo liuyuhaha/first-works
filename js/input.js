@@ -4,6 +4,7 @@ $(function(){
     window.Input=function(selector){
 // 定义某个元素，这一步就是先定义好一个元素等待传值
         var $ele
+        ,$error_ele
         ,me=this
         ,rule={required:true};
 
@@ -28,6 +29,7 @@ $(function(){
         //当使用new 关键字时候,this 指向的是当前开辟的这个对象实例，
         // 因此外部用一个变量引用它，就可以使用这个新对象实例当不使用new
         // ,this就是指向window 。但是对于dom事件中，需要另外理解了。
+        get_error_ele();
             me.load_validator(); 
         //开始检测用户是否输入，没刷新也可以检测
             listen();
@@ -36,11 +38,22 @@ $(function(){
         function listen(){
             //change节省资源，keyup，当用户在输入过程就在检测
             $ele.on('change',function(){
-               var re= me.validator.is_valid(me.get_val());
-               console.log("valid:",re);
+               var valid= me.validator.is_valid(me.get_val());
+               if(valid)
+               $error_ele.hide();
+               else
+               $error_ele.show();
             })
         }
 
+        
+        function get_error_ele(){
+            $error_ele=$(get_error_selector());
+        }
+        // 获得当前元素id封装成一个function
+        function get_error_selector(){
+            return '#'+$ele.attr('name')+'-input-error';
+        }
 
 //封装load_validator
 //确定我是谁的问题，进行封装

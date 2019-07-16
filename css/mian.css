@@ -86,4 +86,5 @@
 /* 表单 */
 .input-error{
     color: red;
+    display: none;
 }
