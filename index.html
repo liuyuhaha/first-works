@@ -87,7 +87,7 @@
                         </span>
                     </div>
                 </div>
-                <form action="http://localhost:8000/index.html" class="login" method="GET">
+                <form id="signup" action="http://localhost:8000/index.html" method="GET">
                 <ul class="for-list">
                     <li class="list-item">
                         <input data-rule='minlength:2|maxlength:6' 
@@ -99,12 +99,12 @@
                     </li>
                     <li class="list-item"></li>
                     <li class="list-item">
-                        <input data-rule='minlength:2|maxlength:6' 
+                        <input data-rule='pattern:"^[a-z0-9]*$"|minlength:2|maxlength:18' 
                         type="text"
                         placeholder="CAM用户名"
                         name="username"
                         class="input-control">
-                        <div class="input-error" id="username-input-error">用户名不能小于2位，不能超过6位</div>
+                        <div class="input-error" id="username-input-error">用户名不能小于2位，不能超过18位</div>
                     </li>
                     <li class="list-item">
                         <input data-rule='minlength:6|maxlength:12' 

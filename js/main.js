@@ -1,7 +1,7 @@
 $(function(){
     'use strict';
 
-//     var validator=new Validator(' ',
+//     var validator=new Validator('fsf',
 //     {maxlength:6
 // });
 //     // var result=validator.validate_maxlength();
@@ -12,12 +12,17 @@ $(function(){
      
     //  选中页面中所有的input[data-rule]
     // jquey属性选择器的写法
-    var $inputs=$('[data-rule]');
-    var inputs=[];
-    $inputs.each(function(index,val){
+    var $inputs=$('[data-rule]')
+    , $form=$('#signup')
+    ,inputs=[];
+
+    $inputs.each(function(index,node){
         // 解析每一个input解析规则
-        var tmp=new Input(val);
+        var tmp=new Input(node);
         inputs.push(tmp);
     });
-    console.log("inputs",inputs);
+    
+    $form.on('submit',function(e){
+        e.preventDefault(); 
+    })
 });

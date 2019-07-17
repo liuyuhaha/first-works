@@ -37,7 +37,7 @@ $(function(){
         }
         this.validate_required=function(){
             var real=$.trim(val);
-            if(!real&&real!==0){
+            if(!real && real !==0){
                 return false;
             }return true;
         }

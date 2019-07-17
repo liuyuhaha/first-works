@@ -6,7 +6,9 @@ $(function(){
         var $ele
         ,$error_ele
         ,me=this
-        ,rule={required:true};
+        ,rule={
+            required:true
+        };
 
         this.load_validator=function(){
             var val=this.get_val();
@@ -23,13 +25,14 @@ $(function(){
         function init(){
         //找到元素
             find_ele();
+            get_error_ele();
         //找到元素所绑定的验证规则
             parse_rule();
         //检测是否合法，传到validator里面，这次将其暴露出去
         //当使用new 关键字时候,this 指向的是当前开辟的这个对象实例，
         // 因此外部用一个变量引用它，就可以使用这个新对象实例当不使用new
         // ,this就是指向window 。但是对于dom事件中，需要另外理解了。
-        get_error_ele();
+        
             me.load_validator(); 
         //开始检测用户是否输入，没刷新也可以检测
             listen();
