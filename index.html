@@ -92,13 +92,31 @@
                     <li class="list-item">
                         <input data-rule='minlength:2|maxlength:6|max:999999|min:18' 
                         type="text"
-                        id="test" 
-                        name="username"
+                        placeholder="主账号ID"
+                        name="number"
                         class="input-control">
-                        <div class="input-error" id="username-input-error">请输入主账号ID</div>
+                        <div class="input-error" id="number-input-error">请输入主账号ID</div>
                     </li>
                     <li class="list-item"></li>
-                    <li class="list-item"></li>
+                    <li class="list-item">
+                        <input data-rule='minlength:2|maxlength:6' 
+                        type="text"
+                        
+                        name="username"
+                        class="input-control">
+                        <div class="input-error" id="username-input-error">用户名不能小于2位，不能超过6位</div>
+                    </li>
+                    <li class="list-item">
+                        <input data-rule='minlength:6|maxlength:12' 
+                        type="password"
+                        placeholder="密码"
+                        name="password"
+                        class="input-control">
+                        <div class="input-error" id="password-input-error">账号不存在或密码错误，请重新输入</div>
+                    </li>
+                    <li class="list-item">
+                        <button type="submit">登录</button>
+                    </li>
                 </ul>
                 </form>
             </div>

@@ -9,8 +9,15 @@ $(function(){
 //     var result=validator.validate_pattern();
 //     console.log("result:"+result);
 
-     var test=new Input("#test");//先实例化input，input已经在input.js实例化了
-     var valid=test.validator.is_valid(); 
-     console.log('valid:',valid);
-    //  选中页面中所有的input
+     
+    //  选中页面中所有的input[data-rule]
+    // jquey属性选择器的写法
+    var $inputs=$('[data-rule]');
+    var inputs=[];
+    $inputs.each(function(index,val){
+        // 解析每一个input解析规则
+        var tmp=new Input(val);
+        inputs.push(tmp);
+    });
+    console.log("inputs",inputs);
 });
