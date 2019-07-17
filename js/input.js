@@ -37,7 +37,7 @@ $(function(){
 
         function listen(){
             //change节省资源，keyup，当用户在输入过程就在检测
-            $ele.on('change',function(){
+            $ele.on('blur',function(){
                var valid= me.validator.is_valid(me.get_val());
                if(valid)
                $error_ele.hide();

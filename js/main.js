@@ -1,12 +1,12 @@
 $(function(){
     'use strict';
 
-//     var validator=new Validator('..',
-//     {pattern:'^[a-zA-Z0-9]*$'
+//     var validator=new Validator(' ',
+//     {maxlength:6
 // });
 //     // var result=validator.validate_maxlength();
-//     // var result=validator.validate_numric();
-//     var result=validator.validate_pattern();
+//     var result=validator.validate_required();
+//     // var result=validator.validate_pattern();
 //     console.log("result:"+result);
 
      
