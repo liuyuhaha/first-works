@@ -51,6 +51,7 @@ $(function(){
 
         
         function get_error_ele(){
+            //ele=$(this):获取当前被选中元素对象
             $error_ele=$(get_error_selector());
         }
         // 获得当前元素id封装成一个function

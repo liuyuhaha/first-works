@@ -6,7 +6,9 @@ $(function(){
         //总方法
         this.is_valid = function(new_val){
             var key;
-            val=new_val || val;
+            //val=new_val || val; 是个坑，如果用户第一次输入值后删除为空值，系统将会选择第一次的值判定为合法
+            if(new_val!==undefined)
+            val=new_val;
             //如果不是必填项且用户未填写任何内容则直接判定为合法跳过
             if(!rule.required && !val)
             return true;

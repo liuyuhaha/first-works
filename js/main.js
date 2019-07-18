@@ -16,9 +16,9 @@ $(function(){
     , $form=$('#signup')
     ,inputs=[];
 
-    $inputs.each(function(index,node){
+    $inputs.each(function(index,val){
         // 解析每一个input解析规则
-        var tmp=new Input(node);
+        var tmp=new Input(val);
         inputs.push(tmp);
     });
     
@@ -37,5 +37,12 @@ $(function(){
                 return;
             }
         } 
-    })
+        //signup写好可以将alert替换掉
+        alert("valid");
+    });
+
+    // 最终跟服务器通信的function
+    function signup(){
+        $.post()
+    }
 });
