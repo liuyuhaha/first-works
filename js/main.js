@@ -42,7 +42,15 @@ $(function(){
     });
 
     // 最终跟服务器通信的function
-    function signup(){
-        $.post()
-    }
+    // function signup(){
+    //     $.post("http://localhost:8000/index.html",{})
+    // }
+
+    var ic = $("#idcard");
+    var card1 = $("#cardone"); 
+
+    ic.on("mouseover",function(){
+        card1.load('card.html');
+    })
+
 });

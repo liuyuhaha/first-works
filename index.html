@@ -10,6 +10,7 @@
      <!-- 下载的css文件要放在自己写的文件上面 -->
     <link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="css\mian.css">
+    
 </head>
 <style type="text/css">
     .icon {
@@ -64,27 +65,27 @@
                     </div>
                     <div class="attention">
                         请输入
-                        <span class="txt-hide">
+                        <span class="txt-hide"id="idcard">
                             主账号ID
-                            <div class="txt-hide-wrap">
-                                <div class="content">
-                                账号ID（例如：100001234567）
-                                是账号在腾讯云的唯一标识，
-                                请在账号中心-账号信息里查看。
+                        </span>
+                            <div class="txt-hide-wrap" >
+                                <div class="content" id="cardone">
+                                
                                 </div>
                             </div>
-                        </span>
+                        
                         并选择
-                        <span class="txt-hide">
+                        <span class="txt-hide" id="logincard">
                             登录方式
-                            <div class="txt-hide-wrap">
-                                <div class="content">
+                        </span>
+                            <div class="txt-hide-wrap" >
+                                <div class="content" id="cardtwo">
                                  登录方式分为CAM子用户登录
                                  和企业微信子用户登录，
                                  请根据您的子用户类型选择相应的登录方式。                        
                                 </div>
                             </div>
-                        </span>
+                        
                     </div>
                 </div>
                 <form id="signup" action="http://localhost:8000/index.html" method="GET">
