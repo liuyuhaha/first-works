@@ -51,6 +51,6 @@ $(function(){
 
     ic.on("mouseover",function(){
         card1.load('card.html');
-    })
+    });
 
 });
