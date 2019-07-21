@@ -14,7 +14,11 @@ $(function(){
     // jquey属性选择器的写法
     var $inputs=$('[data-rule]')
     , $form=$('#signup')
-    ,inputs=[];
+    ,inputs=[]
+    ,$card=$('span[name]')
+    ,$nn
+    ;
+
 
     $inputs.each(function(index,val){
         // 解析每一个input解析规则
@@ -46,11 +50,17 @@ $(function(){
     //     $.post("http://localhost:8000/index.html",{})
     // }
 
-    var ic = $("#idcard");
-    var card1 = $("#cardone"); 
-
-    ic.on("mouseover",function(){
-        card1.load('card.html');
+    function get_span_name(){
+       return '#'+$card.attr('name')+'_content';
+    }
+    function kid(){
+         $nn=$(get_span_name());
+    }
+    
+    $card.on("mouseover",function(){
+        kid();
+        $nn.load('card1.html');
     });
+    
 
 });
