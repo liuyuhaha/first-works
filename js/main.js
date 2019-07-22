@@ -17,6 +17,7 @@ $(function(){
     ,inputs=[]
     ,$card=$('span[name]')
     ,$nn
+    ,loaded=false
     ;
 
 
@@ -50,16 +51,32 @@ $(function(){
     //     $.post("http://localhost:8000/index.html",{})
     // }
 
+//创建私有函数来获取由含有name属性的span元素，再return
     function get_span_name(){
+        //return指定id元素，id名字如下
        return '#'+$card.attr('name')+'_content';
     }
+    //同样创建另一个私有函数来调用获取id名称的函数，再赋值给一个变量，进而获取id元素
     function kid(){
          $nn=$(get_span_name());
     }
     
     $card.on("mouseover",function(){
         kid();
-        $nn.load('card1.html');
+        //如果$nn为可见，则当有动作时就会隐藏，否则会显示
+        if($nn.is(':visible')){
+            $nn.slideUp();
+        }else{
+        //原本loaded为flase，所以！loaded为true，加载之后loaded会变为true
+        //隐藏之后再次加载就不会再请求load了，因为此时的！loaded为false
+            if(!loaded){
+                $nn.load('card1.html');
+                loaded=true;
+            }
+            $nn.slideDown();
+        }
+        
+        // $nn.toggle();
     });
     
 
