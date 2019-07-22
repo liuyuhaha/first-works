@@ -61,23 +61,19 @@ $(function(){
          $nn=$(get_span_name());
     }
     
-    $card.on("mouseover",function(){
+    $card.on("mouseenter",function(){
         kid();
-        //如果$nn为可见，则当有动作时就会隐藏，否则会显示
-        if($nn.is(':visible')){
-            $nn.slideUp();
+        if(!loaded){
+            $nn.load('card1.html');
+            $nn.slideDown();
+            loaded=true;
         }else{
-        //原本loaded为flase，所以！loaded为true，加载之后loaded会变为true
-        //隐藏之后再次加载就不会再请求load了，因为此时的！loaded为false
-            if(!loaded){
-                $nn.load('card1.html');
-                loaded=true;
-            }
             $nn.slideDown();
         }
-        
-        // $nn.toggle();
     });
-    
+
+    $card.on("mouseleave",function(){
+        $nn.slideUp();
+    });
 
 });
