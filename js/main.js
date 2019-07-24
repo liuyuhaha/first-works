@@ -15,9 +15,11 @@ $(function(){
     var $inputs=$('[data-rule]')
     , $form=$('#signup')
     ,inputs=[]
-    ,$card=$('span[name]')
+    ,oh
     ,$nn
+    ,$boh
     ,loaded=false
+    ,reload=false
     ;
 
 
@@ -50,30 +52,40 @@ $(function(){
     // function signup(){
     //     $.post("http://localhost:8000/index.html",{})
     // }
+function pack_ele(){
+    $nn=$('#'+oh+'_content');
+    $boh=oh+'_content.html';
+    return $nn,$boh;
+}
 
-//创建私有函数来获取由含有name属性的span元素，再return
-    function get_span_name(){
-        //return指定id元素，id名字如下
-       return '#'+$card.attr('name')+'_content';
-    }
-    //同样创建另一个私有函数来调用获取id名称的函数，再赋值给一个变量，进而获取id元素
-    function kid(){
-         $nn=$(get_span_name());
-    }
+function find_def(){
     
-    $card.on("mouseenter",function(){
-        kid();
-        if(!loaded){
-            $nn.load('card1.html');
-            $nn.slideDown();
-            loaded=true;
-        }else{
-            $nn.slideDown();
-        }
-    });
+}
 
-    $card.on("mouseleave",function(){
+$('span').on("mouseover",function(e){
+    oh=$(e.target).attr('name');
+    pack_ele();
+    if(!loaded && !reload){
+        $nn.load($boh);
+        $nn.slideDown();   
+        loaded=true; 
+        reload=true;               
+    }else{
+        $nn.slideDown();
+        loaded=true;
+        
+    }
+});
+
+$('span').on("mouseleave",function(e){
+    oh=$(e.target).attr('name');
+    pack_ele();
+    if(loaded){
         $nn.slideUp();
-    });
+        loaded=false;           
+    }   
+});
+
+
 
 });
