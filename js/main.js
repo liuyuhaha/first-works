@@ -15,11 +15,6 @@ $(function(){
     var $inputs=$('[data-rule]')
     , $form=$('#signup')
     ,inputs=[]
-    ,oh
-    ,$nn
-    ,$boh
-    ,loaded=false
-    ,reload=false
     ;
 
 
@@ -52,40 +47,21 @@ $(function(){
     // function signup(){
     //     $.post("http://localhost:8000/index.html",{})
     // }
-function pack_ele(){
-    $nn=$('#'+oh+'_content');
-    $boh=oh+'_content.html';
-    return $nn,$boh;
-}
+    // var form=$('#search');
+    // var input=$('input#username');
+    // var result=$('#result');
+    // var username;
 
-function find_def(){
-    
-}
-
-$('span').on("mouseover",function(e){
-    oh=$(e.target).attr('name');
-    pack_ele();
-    if(!loaded && !reload){
-        $nn.load($boh);
-        $nn.slideDown();   
-        loaded=true; 
-        reload=true;               
-    }else{
-        $nn.slideDown();
-        loaded=true;
-        
-    }
-});
-
-$('span').on("mouseleave",function(e){
-    oh=$(e.target).attr('name');
-    pack_ele();
-    if(loaded){
-        $nn.slideUp();
-        loaded=false;           
-    }   
-});
-
-
+    // form.on('submit',function(e){
+    //     e.preventDefault();
+    //     username=input.val();
+    //     $.ajax('https://api.github.com/users/' + username)
+    //     .done(function(data){
+    //         var html=
+    //         '<div>用户名：'+data.login+'</div>'+
+    //         '<div>介绍：'+(data.bio ||'nothing')+'</div>'
+    //         result.html(html);
+    //     });
+    // });
 
 });

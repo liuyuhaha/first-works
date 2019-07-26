@@ -43,7 +43,7 @@ $(function(){
             $ele.on('blur',function(){
                var valid= me.validator.is_valid(me.get_val());
                if(valid)
-               $error_ele.hide();
+               $error_ele.hide(); 
                else
                $error_ele.show();
             })
@@ -63,7 +63,7 @@ $(function(){
 //确定我是谁的问题，进行封装
         function find_ele(){
             if(selector instanceof jQuery){
-                $ele=$(selector);
+                $ele=selector;
             }else{
                 $ele=$(selector);
             }

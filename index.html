@@ -65,22 +65,26 @@
                     </div>
                     <div class="attention">
                         请输入
-                        <span class="txt-hide"  name="idcard">
+                        <span class="txt-hide"  id="idcard">
                             主账号ID
                         </span>
                             <div class="txt-hide-wrap" >
                                 <div class="content" id="idcard_content">
-                                    
+                                    账号ID（例如：100001234567）
+                                    是账号在腾讯云的唯一标识，
+                                    请在账号中心-账号信息里查看。
                                 </div>
                             </div>
                         
                         并选择
-                        <span class="txt-hide" name="logincard">
+                        <span class="txt-hide" id="logincard">
                             登录方式
                         </span>
                             <div class="txt-hide-wrap" >
                                 <div class="content" id="logincard_content">
-                                                            
+                                    登录方式分为CAM子用户登录
+                                    和企业微信子用户登录，
+                                    请根据您的子用户类型选择相应的登录方式。                  
                                 </div>
                             </div>
                         
@@ -96,7 +100,26 @@
                         class="input-control">
                         <div class="input-error" id="number-input-error">请输入主账号ID</div>
                     </li>
-                    <li class="list-item"></li>
+                    <li class="list-item" id="dif_login0">
+                        <a href="#">
+                        CAM子用户登录
+                        </a>
+                        <svg class="icon" aria-hidden="true" id="icon3">
+                            <use xlink:href="#icon-down"></use>
+                        </svg>
+                    </li> 
+                    <ul class="inner">
+                        <li class="dif_login_list" id="dif_login1">
+                        <a href="#">
+                            CAM子用户登录
+                        </a>
+                    </li>
+                    <li class="dif_login_list" id="dif_login2">
+                        <a href="#">
+                        企业微信子用户登录
+                        </a>
+                    </li>   
+                    </ul>
                     <li class="list-item">
                         <input data-rule='pattern:"^[a-z0-9]*$"|minlength:2|maxlength:18' 
                         type="text"
@@ -115,9 +138,19 @@
                     </li>
                     <li class="list-item">
                         <button type="submit">登录</button>
+                        
                     </li>
                 </ul>
                 </form>
+                <!-- <form action="" id="search">
+                    <input id="username"
+                    type="search"
+                    placeholder="搜索用户">
+                    <button type="submit">搜索gayhub用户</button>
+                </form>
+                <div id="result">
+                   
+                </div> -->
             </div>
             <div class="other_right">
 
@@ -132,7 +165,7 @@
     </div>
     <!-- 下载的js文件要放在自己写的文件上面 -->
 <script src="node_modules\jquery\dist\jquery.js"></script>
-<script src="https://at.alicdn.com/t/font_1253647_fmfx0epxqed.js"></script>
+<script src="https://at.alicdn.com/t/font_1253647_6fh817uhyyt.js"></script>
 <script src="js\validator.js"></script>
 <script src="js\input.js"></script>
 <script src="js\main.js"></script>
