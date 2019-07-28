@@ -1,5 +1,5 @@
 #top_nav{
-    width: 100%;
+    width: 1520px;
     height: 60px;
     background-color: #2B303B;
     color: #dddddd;
@@ -20,7 +20,7 @@
 
 .right{
     position: absolute;
-    right: 20px;
+    left: 1310px;
     top: 13px;
     width: 190px;
     height: 34px;
@@ -93,17 +93,23 @@
 }
 
 .for-list{
+    position: relative;
     padding-left: 0;
 }
 .for-list li{
     list-style: none;
     color: rgb(51,51,51);
-    margin-bottom: 15px;
-    
+    margin-bottom: 15px;  
 }
+
+
 .for-list li input{
     padding: 7px 10px; 
 }
+
+.for-list li input:hover{
+    border-color: #00a4ff;
+    }
 
 input::-webkit-input-placeholder{
     color: #333;
@@ -117,9 +123,11 @@ input::-moz-input-placeholder{
 }
 
 .for-list input{
-    width: 318px;
-    height: 29px;
+    width: 340px;
+    height: 45px;
     border: 1px solid rgb(221,221,221);
+    /* 神器 */
+    box-sizing: border-box;
 }
 .for-list li a,.inner li a{
     color:#333;
@@ -127,19 +135,46 @@ input::-moz-input-placeholder{
     font-size: 14px;
     line-height: 45px;
     color: rgb(51,51,51);
+    padding: 0 21px 0 10px;
 }
 .for-list .inner{
     position: absolute;
     padding-left: 0;
-    display:none;
+    background-color: white;
+    top: 44px;
+    left: -1px;
+    display: none;
+    border: 1px solid rgb(221,221,221);
+    border-top: none;
+}
+
+.for-list .inner li{
+    width: 338px;
+    height: 33px;
+    margin-bottom: 0!important;   
+}
+
+.for-list .inner li:hover{
+    background-color: #F2F2F2;
+}
+
+.for-list .inner li a{
+    font-size: 14px;
+    line-height: 33px;
+    display:block;
 }
 
 #dif_login0{
+    position: relative;
     border: 1px solid rgb(221,221,221);
-    width: 307px;
+    width: 340px;
     height: 45px;
     margin-bottom: 15px;
-    padding: 0 21px 0 10px;
+    box-sizing: border-box;
+}
+
+#dif_login0:hover{
+    border-color: #00a4ff;
 }
 /* rgb(0, 146, 238); */
 .list-item button{
@@ -150,7 +185,31 @@ input::-moz-input-placeholder{
     height: 45px;
     padding: 0 20px;
 }
+
+.list-item button:hover{
+    background-color:#0092EE;
+}
+
 #icon3{
     position: absolute;
-    display: none;
+    top: 15px;
+    left: 310px;
+    background-position: 0px 0px;
+}
+
+/* 中心 */
+.main{
+    padding: 0 20px 90px;
+}
+
+.main-inner{
+    margin: 0 249.6px;
+    padding:0 10px 20px;
+}
+
+.fo_left{
+    width: 490px;
+    height: 504px;
+    padding:60px 100px 0 0;
+    box-sizing: border-box;
 }

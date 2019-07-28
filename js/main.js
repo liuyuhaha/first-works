@@ -15,6 +15,7 @@ $(function(){
     var $inputs=$('[data-rule]')
     , $form=$('#signup')
     ,inputs=[]
+    ,cam=$('.inner')
     ;
 
 
@@ -41,6 +42,16 @@ $(function(){
         } 
         //signup写好可以将alert替换掉
         alert("valid");
+    });
+
+
+    // CAM子用户登录下拉选项
+    $('#dif_login0').on('click',function(){
+        if(cam.is(':visible')){
+            cam.hide();
+        }else{
+            cam.show();
+        }
     });
 
     // 最终跟服务器通信的function
