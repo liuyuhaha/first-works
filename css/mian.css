@@ -78,6 +78,68 @@
     padding: 0 10px;
 }
 
+/* 子用户css */
+.big-log{
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.txt-hide{
+    display: inline-block;
+}
+#logincard,#idcard{
+    /* 给主账号ID与登录方式添加样式 */
+    border-bottom: dashed 1px #666;
+    cursor: pointer;
+    color: #999;
+    position: relative;
+}
+.txt-hide{
+    position: relative;
+}
+
+.txt-hide-wrap{
+    color: #404A58;
+}
+
+#idcard_content,#logincard_content{
+    display: none; 
+    position: absolute;
+    width: 220px;
+    height: 70px;
+    margin-top: 7px;
+    z-index: 10;
+    border: 1px solid rgb(179, 183, 191);
+    font-size: 12px;
+    background-color: #fff;
+    padding: 8px 10px;
+    line-height: 18px;
+    box-sizing: border-box;
+}
+
+#idcard_content::before{
+    content: '';
+    width: 0;
+	height: 0;
+	border: 7px solid;
+	position: absolute;
+	top: -14px;
+	border-color:  transparent transparent rgb(179, 183, 191);
+}
+#logincard_content::before{
+    content: '';
+    width: 0;
+	height: 0;
+	border: 7px solid;
+	position: absolute;
+	top: -14px;
+	border-color:  transparent transparent rgb(179, 183, 191);
+}
+
+#idcard_content,#logincard_content:hover{
+    display: show();
+}
+
+
 /* addclass为变颜色 */
 .drop-list:hover a{
     color: #00a4ff;
@@ -87,9 +149,7 @@
 .input-error{
     color: red;
     display: none;
-}
-.content{
-    display: none; 
+    font-size: 12px;
 }
 
 .for-list{
@@ -120,6 +180,10 @@ input::-moz-input-placeholder{
     color: #333;
     font-size: 14px;
     line-height: 45px;
+}
+
+.red{
+    border-color: red!important;
 }
 
 .for-list input{

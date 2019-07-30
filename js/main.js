@@ -10,15 +10,20 @@ $(function(){
 //     console.log("result:"+result);
 
      
-    //  选中页面中所有的input[data-rule]
+    //  选中页面中所有的input[data-rule]，服务于input检测
     // jquey属性选择器的写法
     var $inputs=$('[data-rule]')
     , $form=$('#signup')
     ,inputs=[]
+    // cam定义服务于CAM子用户登录的点击动作
     ,cam=$('.inner')
+    // 下面四个定义服务于主账号ID与登录方式弹出框
+    ,spans=$('span[id]')
+    ,someid
+    ,$span
     ;
 
-
+// input检测是否合法
     $inputs.each(function(index,val){
         // 解析每一个input解析规则
         var tmp=new Input(val);
@@ -36,7 +41,7 @@ $(function(){
             //.validator.is_valid()用来检测的私有方法
             var r=item.validator.is_valid();
             if(!r){
-                alert("invalid");
+                $inputs.addClass('red');
                 return;
             }
         } 
@@ -45,8 +50,33 @@ $(function(){
     });
 
 
+
+    // 主账号ID与登录方式弹出框
+    function get_loadid(){
+        return '#'+someid+'_content';
+    }
+
+    function pack_loadid(){
+        $span=$(get_loadid());
+    }
+
+    spans.on('mouseenter',function(){
+        someid=$(this).attr('id');
+        pack_loadid();
+        $span.show();
+    });
+
+    spans.on('mouseleave',function(){
+        someid=$(this).attr('id');
+        pack_loadid();
+        $span.hide();
+    });
+
+
+
     // CAM子用户登录下拉选项
-    $('#dif_login0').on('click',function(){
+    $('#dif_login0').on('click',
+    function(){
         if(cam.is(':visible')){
             cam.hide();
         }else{
