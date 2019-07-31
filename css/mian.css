@@ -162,7 +162,6 @@
     margin-bottom: 15px;  
 }
 
-
 .for-list li input{
     padding: 7px 10px; 
 }
@@ -276,4 +275,10 @@ input::-moz-input-placeholder{
     height: 504px;
     padding:60px 100px 0 0;
     box-sizing: border-box;
+}
+
+/* 企业微信子用户登录切换 */
+.disappear{
+    /* addClass */
+    display: none;
 }

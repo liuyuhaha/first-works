@@ -21,6 +21,9 @@ $(function(){
     ,spans=$('span[id]')
     ,someid
     ,$span
+    // 服务于企业微信子用户登录切换
+    ,$deflog=$('#dif_login_list')
+    ,$li=$('[data-control]')
     ;
 
 // input检测是否合法
@@ -83,6 +86,16 @@ $(function(){
             cam.show();
         }
     });
+
+
+// 企业微信子用户登录切换 
+
+
+
+// .on('click',
+// function(){
+//     $li.
+// });
 
     // 最终跟服务器通信的function
     // function signup(){

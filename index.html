@@ -119,7 +119,7 @@
                         </ul>
                     </li> 
                     
-                    <li class="list-item">
+                    <li class="list-item" dat-control="change">
                         <input data-rule='pattern:"^[a-z0-9]*$"|minlength:2|maxlength:18' 
                         type="text"
                         placeholder="CAM用户名"
@@ -127,7 +127,7 @@
                         class="input-control">
                         <div class="input-error" id="username-input-error">用户名不能小于2位，不能超过18位</div>
                     </li>
-                    <li class="list-item">
+                    <li class="list-item" dat-control="change">
                         <input data-rule='minlength:6|maxlength:12' 
                         type="password"
                         placeholder="密码"
@@ -135,9 +135,8 @@
                         class="input-control">
                         <div class="input-error" id="password-input-error">账号不存在或密码错误，请重新输入</div>
                     </li>
-                    <li class="list-item">
+                    <li class="list-item" dat-control="change">
                         <button type="submit">登录</button>
-                        
                     </li>
                 </ul>
                 </form>
