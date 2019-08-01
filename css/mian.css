@@ -222,6 +222,7 @@ input::-moz-input-placeholder{
     position: absolute;
     padding-left: 0;
     background-color: white;
+    z-index: 10;
     top: 44px;
     left: -1px;
     display: none;

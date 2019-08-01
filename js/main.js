@@ -90,6 +90,7 @@ $(function(){
             cam.show();
         }
     });
+    
 
     // 企业微信子用户登录切换
     
@@ -97,6 +98,7 @@ $(function(){
         // 改写change-value上的文字
         $('#change-value').text(txt);
     }
+    
 
     deflog.on('click',function(){
         // flogid=$(this).attr('id')
