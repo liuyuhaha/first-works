@@ -321,3 +321,21 @@ input::-moz-input-placeholder{
  .qrcode-txt{
      padding: 10px 0;
  }
+
+ .main-login{
+     margin-top: 40px;
+     text-align: left;
+ }
+.logtxt{
+    text-decoration: none;
+    color: #00a4ff;
+    font-size: 14px;
+}
+
+.logtxt:hover #icon4{
+    transform: translateX(-5px);
+}
+
+#icon4{
+    transition: all .3s;  
+}

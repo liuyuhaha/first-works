@@ -17,6 +17,7 @@ $(function(){
     ,inputs=[]
     // cam定义服务于CAM子用户登录的点击动作
     ,cam=$('.inner')
+    ,dif0
     // 下面四个定义服务于主账号ID与登录方式弹出框
     ,spans=$('span[id]')
     ,someid
@@ -55,8 +56,7 @@ $(function(){
         //signup写好可以将alert替换掉
         alert("valid");
     });
-
-
+    
 
     // 主账号ID与登录方式弹出框
     function get_loadid(){
@@ -82,14 +82,22 @@ $(function(){
 
 
     // CAM子用户登录下拉选项
-    $('#dif_login0').on('click',
+    // 除了特定id被点击之外有其他动作，其余所有documnet被点击都会隐藏cam
+    $(document).on('click',
     function(){
+        cam.hide();
+    })
+
+    $('#dif_login0').on('click',
+    function(e){ 
+        e.stopPropagation();
         if(cam.is(':visible')){
             cam.hide();
         }else{
             cam.show();
         }
     });
+    
     
 
     // 企业微信子用户登录切换
