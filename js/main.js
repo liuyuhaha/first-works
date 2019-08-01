@@ -22,8 +22,12 @@ $(function(){
     ,someid
     ,$span
     // 服务于企业微信子用户登录切换
-    ,$deflog=$('#dif_login_list')
-    ,$li=$('[data-control]')
+    ,deflog=$('.dif_login_list')
+    ,$li=$('li[data-control]')
+    ,flogid
+    ,txt
+    ,con=$('#container')
+    ,loaded=false
     ;
 
 // input检测是否合法
@@ -87,15 +91,40 @@ $(function(){
         }
     });
 
+    // 企业微信子用户登录切换
+    
+    function get_txt(){
+        // 改写change-value上的文字
+        $('#change-value').text(txt);
+    }
 
-// 企业微信子用户登录切换 
+    deflog.on('click',function(){
+        // flogid=$(this).attr('id')
+        flogid=$(this).attr('id');
+        // txt获取被点击按钮上的text
+        txt=$(this).children().text();
+        get_txt();
+        if(!loaded && flogid=='dif_login2'){
+            $li.addClass('disappear');
+            con.removeAttr('style')
+            .load('wechat.html');
+            loaded=true;
+        }else{
+            if(loaded && flogid=='dif_login2'){
+                $li.addClass('disappear');
+                con.removeAttr('style').show();
+            }else{
+                con.hide();
+                $li.removeClass('disappear');
+            }
+        }
+    });
 
 
 
-// .on('click',
-// function(){
-//     $li.
-// });
+
+
+
 
     // 最终跟服务器通信的function
     // function signup(){

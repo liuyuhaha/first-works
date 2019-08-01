@@ -122,7 +122,7 @@
 	height: 0;
 	border: 7px solid;
 	position: absolute;
-	top: -14px;
+	top: -15px;
 	border-color:  transparent transparent rgb(179, 183, 191);
 }
 #logincard_content::before{
@@ -131,7 +131,7 @@
 	height: 0;
 	border: 7px solid;
 	position: absolute;
-	top: -14px;
+	top: -15px;
 	border-color:  transparent transparent rgb(179, 183, 191);
 }
 
@@ -143,6 +143,23 @@
 /* addclass为变颜色 */
 .drop-list:hover a{
     color: #00a4ff;
+}
+
+/* 中心 */
+.main{
+    padding: 0 20px 90px;
+}
+
+.main-inner{
+    margin: 0 249.6px;
+    padding:0 10px 20px;
+}
+
+.fo_left{
+    width: 490px;
+    height: 504px;
+    padding:60px 100px 0 0;
+    box-sizing: border-box;
 }
 
 /* 表单 */
@@ -160,6 +177,7 @@
     list-style: none;
     color: rgb(51,51,51);
     margin-bottom: 15px;  
+    width: 340px;
 }
 
 .for-list li input{
@@ -260,25 +278,45 @@ input::-moz-input-placeholder{
     background-position: 0px 0px;
 }
 
-/* 中心 */
-.main{
-    padding: 0 20px 90px;
-}
 
-.main-inner{
-    margin: 0 249.6px;
-    padding:0 10px 20px;
-}
-
-.fo_left{
-    width: 490px;
-    height: 504px;
-    padding:60px 100px 0 0;
-    box-sizing: border-box;
-}
 
 /* 企业微信子用户登录切换 */
 .disappear{
     /* addClass */
     display: none;
 }
+
+.container{
+    display:list-item;
+    list-style: none;
+}
+.qrcode{
+    width: 340px;
+    height: 228.4px;
+    margin-top: 25px;
+}
+.qrcode-img{
+    width: 188px;
+    height: 188px;
+    position: relative;
+    border: 1px solid #e5e5e5;
+}
+ .centerword{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #999!important;
+    text-decoration: none;
+    text-align: center;
+    padding: 0!important;
+ }
+ .centerword::after{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+ }
+ .qrcode-txt{
+     padding: 10px 0;
+ }
