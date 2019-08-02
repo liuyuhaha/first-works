@@ -58,6 +58,7 @@
     <!-- 再是主题内容，左方是表单，右方是文字按钮 -->
     <div class="main">
         <div class="main-inner">
+            <!-- 网页左半边 -->
             <div class="fo_left">
                 <div class="for-title">
                     <div class="big-log">
@@ -69,7 +70,9 @@
                             主账号ID
                             <div class="txt-hide-wrap" >
                                 <div class="content" id="idcard_content">
-                                    账号ID（例如：100001234567）是账号在腾讯云的唯一标识，请在账号中心-账号信息里查看。
+                                    账号ID（例如：100001234567）是</br>
+                                    账号在腾讯云的唯一标识，请在账号</br>
+                                    中心-账号信息里查看。
                                     <div id="triangle"></div>
                                 </div>
                                 
@@ -80,7 +83,9 @@
                             登录方式
                             <div class="txt-hide-wrap" >
                                 <div class="content" id="logincard_content">
-                                    登录方式分为CAM子用户登录和企业微信子用户登录，请根据您的子用户类型选择相应的登录方式。                  
+                                    登录方式分为CAM子用户登录和企业</br>
+                                    微信子用户登录，请根据您的子用户</br>
+                                    类型选择相应的登录方式。                  
                                     <div id="triangle2"></div>
                                 </div>
                                 
@@ -88,6 +93,7 @@
                         </span>
                     </div>
                 </div>
+                <!-- 表单验证 -->
                 <form id="signup" action="http://localhost:8000/index.html" method="GET">
                 <ul class="for-list">
                     <li class="list-item">
@@ -159,20 +165,45 @@
                      </a>
                 </div>
             </div>
+            <!-- 网页右半边 -->
             <div class="other_right">
-
+                <div class="right-block">
+                    <div class="right-content large">
+                        云产品特惠3折起
+                    </div>
+                    <div class="right-content li-list">
+                        <li class="right_list">服务更稳</li>
+                        <li class="right_list">速度更快</li>
+                        <li class="right_list">价格更优</li>
+                    </div>
+                    <div class="right-content button">
+                        <a href="" class="buy" target="_blank">
+                            立即抢购
+                        </a>
+                    </div>
+                </div>
+                <div class="right-img">
+                    <img src="img\bigground.png" alt="找不到图了！" class="right-logo">
+                </div>
             </div>
         </div>
     </div>
     <!-- 最后网页页脚 -->
     <div class="footer">
-        <span class="copyright">
-
-        </span>
+        <div class="copyright">
+                Copyright ©2019-
+                <span id="year"></span>
+            <span class="last-icon">
+                JUST FOR FUN
+                    <svg class="icon" aria-hidden="true" id="icon5">
+                        <use xlink:href="#icon-yunjisuan-"></use>
+                    </svg>
+            </span>
+        </div>
     </div>
     <!-- 下载的js文件要放在自己写的文件上面 -->
 <script src="node_modules\jquery\dist\jquery.js"></script>
-<script src="https://at.alicdn.com/t/font_1253647_lc6er7qo8jn.js"></script>
+<script src="https:////at.alicdn.com/t/font_1253647_1at7yz9jp8p.js"></script>
 <script src="js\validator.js"></script>
 <script src="js\input.js"></script>
 <script src="js\main.js"></script>

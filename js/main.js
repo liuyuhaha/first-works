@@ -29,6 +29,8 @@ $(function(){
     ,txt
     ,con=$('#container')
     ,loaded=false
+    //页脚年份
+    ,date
     ;
 
 // input检测是否合法
@@ -90,6 +92,7 @@ $(function(){
 
     $('#dif_login0').on('click',
     function(e){ 
+// event.stopPropagation() 方法阻止事件冒泡到父元素，阻止任何父事件处理程序被执行。
         e.stopPropagation();
         if(cam.is(':visible')){
             cam.hide();
@@ -130,6 +133,10 @@ $(function(){
         }
     });
 
+    //页脚年份
+    date= new Date().getFullYear();
+    $('#year').text(date);
+    
 
 
 
