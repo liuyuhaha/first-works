@@ -17,8 +17,6 @@ $(function(){
     ,inputs=[]
     // cam定义服务于CAM子用户登录的点击动作
     ,cam=$('.inner')
-    ,dif0
-    // 下面四个定义服务于主账号ID与登录方式弹出框
     ,spans=$('span[id]')
     ,someid
     ,$span
